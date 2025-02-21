@@ -1,4 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm run format && pnpm run lint
+# Format files and stage the changes
+pnpm run format
+git add -A
+# Run linting after formatting
+pnpm run lint
