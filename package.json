@@ -1,35 +1,26 @@
 {
-  "name": "devb",
+  "name": "shadcn-ui-monorepo",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types",
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "turbo": "^2.3.0",
+    "typescript": "5.5.4",
     "husky": "^9.1.7",
     "prettier": "^3.5.0",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.6.0",
-    "turbo": "^2.4.2",
-    "typescript": "5.7.3"
+    "prettier-plugin-tailwindcss": "^0.6.0"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.12.3",
   "engines": {
-    "node": ">=18"
-  },
-  "lint-staged": {
-    "apps/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix"
-    ],
-    "packages/ui/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix"
-    ],
-    "*.json": [
-      "prettier --write \"**/*.{ts,tsx,md}\""
-    ]
+    "node": ">=20"
   }
 }
